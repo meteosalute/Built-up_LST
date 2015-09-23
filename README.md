@@ -1,2 +1,10 @@
-# Built-up_LST
-Builtup_LST
+# The impact of built-up surfaces on land surface temperatures in Italian urban areas
+
+## Authors:
+
+## Abstract
+
+Urban areas are characterized by the highest degree of soil sealing and continuous built-up areas: Italy is the fifth European countries with the highest artificial land cover rate. This condition causes a substantial spatial variation of the land surface temperature (LST), also modifying the urban microclimate and contributing to urban heat island effect. Nevertheless, the quantitative knowledge of the contribution of different density of built-up surfaces in determining urban spatial LST changes is an information that is currently missing in Italy.
+The aim of this study is to provide a city-specific, synthetic and quantitative information of the spatial annual and seasonal LST modification due to the increased urban built-up coverage.
+This study was carried out generally over the whole year, and specifically during two defined periods (cool/cold and warm/hot periods). Four cities (Milan, Rome, Bologna and Florence) were included in the study. The LST layer and the built-up-surfaces indicator were obtained by using remote sensing MODIS data products (1 km) and the very high resolution cartography (5 m) of built-up surfaces recently developed by the Italian National Institute for Environmental Protection and Research. The relationships between the dependent (mean daily, daytime and LST values) and the independent (built-up surfaces) variables were analyzed through linear regression analyses. Furthermore, comprehensive built-up-surfaces-related LST maps were developed.
+Clear statistically significant linear relationship (p<.001) between built-up surfaces and spatial LST variation were observed in all cities studied, with higher impacts during the warm/hot period than the cool/cold ones. Daytime and nighttime LST slope patterns depend on the city size and the particular urban morphology. The urban maps of built-up-surfaces-related LST developed in the present study, if implemented in the existing city plan, might support more sustainable land management practices in the urban environment through the identification of critical areas (urban Hot-Spots) that would benefit most from mitigation actions by local authorities, land-use decision makers and urban planners.
