@@ -18,7 +18,7 @@ library(plotKML)
 ############################################################
 # Setup directory
 
-setwd("/home/alf/Scrivania/lav_morab_LST")
+setwd("")
 
 ############################################################
 # Load supplementary code
