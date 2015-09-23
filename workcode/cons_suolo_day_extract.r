@@ -296,12 +296,7 @@ system("python rasterstats data/firenze_LST_poly_32n.shp data/firenze_ispra_csuo
 # roma_ex_suolo <- extract(roma_csuolo,roma_LST_poly, fun = sum, na.rm = TRUE)
 # bologna_ex_suolo <- extract(bologna_csuolo,bologna_LST_poly, fun = sum, na.rm = TRUE)
 # palermo_ex_suolo <- extract(palermo_csuolo,palermo_LST_poly, fun = sum, na.rm = TRUE)
-# 
-# saveRDS(firenze_ex_suolo,"firenze_ex_suolo_s.rds")
-# saveRDS(milano_ex_suolo,"milano_ex_suolo_s.rds")
-# saveRDS(roma_ex_suolo,"roma_ex_suolo_s.rds")
-# saveRDS(roma_ex_suolo,"bologna_ex_suolo_s.rds")
-# saveRDS(roma_ex_suolo,"palermo_ex_suolo_s.rds")
+
 
 
 ################################################################################
