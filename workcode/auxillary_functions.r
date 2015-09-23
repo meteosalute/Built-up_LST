@@ -1,15 +1,6 @@
-###########################################################################################################################################
-# Urban hazard risk analyses for identifying urban heat-related human ederly health risk areas in main the most populous Italian cities.
-
-# Marco Morabito  Alfonso Crisci  Beniamino Gioli  Giovanni Gualtieri  Piero Toscano, Simone Orlandini, Gian Franco Gensini
-# Institute of Biometeorology, National Research Council - Via Giovanni Caproni 8, 50145 Florence, Italy.
-# Interdepartmental Centre of Bioclimatology, University of Florence - Piazzale delle Cascine 18, 50144 Florence, Italy.
-# Department of Agrifood Production and Environmental Sciences, University of Florence - Piazzale delle Cascine 18, 50144 Florence, Italy.
-# Clinica Medica e Cardiologia, University of Florence - Viale Morgagni 85, 50134 Florence, Italy.
-#############################################################################################################################################
 
 ##################################################################################################################################
-# Auxillary function for plotting rasters and vectorl layer and palette management
+# Auxillary function for plotting rasters and vector layers and palette management
 ##################################################################################################################################
 
 
