@@ -2,8 +2,8 @@
 The impact of built-up surfaces on land surface temperatures in Italian urban areas
 ===================================================================================
 
-**Marco Morabito** 1,2 , *Alfonso Crisci* 1, Alessandro Messeri 2,3, Simone
-Orlandini 2,3, Antonio Raschi1, Giampiero Maracchi 4, Michele Munafò 5
+**Marco Morabito** [1,2] , *Alfonso Crisci* [1] , Alessandro Messeri [2,3] , Simone
+Orlandini [2,3] , Antonio Raschi [1] , Giampiero Maracchi [4] , Michele Munafò [5]
 
  
 
