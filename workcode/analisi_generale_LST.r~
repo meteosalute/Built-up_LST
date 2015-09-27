@@ -34,9 +34,9 @@ proj_modis="+proj=sinu +lon_0=0 +x_0=0 +y_0=0 +a=6371007.181 +b=6371007.181 +uni
 ###############################################################################################
 # milano break and trend analisys NDVI MODIS 
 
-milano_istat=readRDS("../r_data/milano_istat.rds")
+milano_istat=readRDS("data/milano_istat.rds")
 
-milano_AATmap_ndvi=readRDS("../r_data/milano_AATmap_ndvi.rds")
+milano_AATmap_ndvi=readRDS("data/milano_AATmap_ndvi.rds")
 
 milano_slope_ndvi_b=milano_AATmap_ndvi[["SlopeSEG1"]]  
 milano_break_ndvi_s_b<- TrendClassification(milano_AATmap_ndvi[["PvalSEG1"]], min.length=10, max.pval=0.05)
@@ -58,7 +58,7 @@ plotKML::kml(milano_break_ndvi_FI, colour_scale = SAGA_pal[[1]], colour = layer,
 ##########################################################################################
 # milano break and trend analisys LST MODIS Day
 
-milano_AATmap_LST=readRDS("../r_data/milano_AATmap_LST.rds")
+milano_AATmap_LST=readRDS("data/milano_AATmap_LST.rds")
 
 milano_slope_LST=milano_AATmap_LST[["SlopeSEG1"]]  
 milano_trend_LST_s<- TrendClassification(milano_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -73,7 +73,7 @@ plotKML::kml(milano_trend_LST_s, colour_scale = SAGA_pal[[1]], colour = TrendSEG
 #######################################################################################################
 # milano LST climate 
 
-milano_LST_monthly_ts=readRDS("../r_data/milano_LST_monthly.rds")
+milano_LST_monthly_ts=readRDS("data/milano_LST_monthly.rds")
 
 milano_LST_DJF<-subset(milano_LST_monthly_ts,grep("-01-|-02-|-12-",index(milano_LST_monthly_ts)))
 milano_LST_DJF_mean=calc(milano_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -114,9 +114,9 @@ plotKML::kml(milano_LST_SON_sd, colour_scale = SAGA_pal[[1]], colour = layer,wid
 ###############################################################################################
 # palermo break and trend analisys NDVI MODIS 
 
-palermo_istat=readRDS("../r_data/palermo_istat.rds")
+palermo_istat=readRDS("data/palermo_istat.rds")
 
-palermo_AATmap_ndvi=readRDS("../r_data/palermo_AATmap_ndvi.rds")
+palermo_AATmap_ndvi=readRDS("data/palermo_AATmap_ndvi.rds")
 
 palermo_slope_ndvi_b=palermo_AATmap_ndvi[["SlopeSEG1"]]  
 palermo_break_ndvi_s_b<- TrendClassification(palermo_AATmap_ndvi[["PvalSEG1"]], min.length=10, max.pval=0.05)
@@ -138,7 +138,7 @@ plotKML::kml(palermo_break_ndvi_FI, colour_scale = SAGA_pal[[1]], colour = layer
 ##########################################################################################
 # palermo break and trend analisys LST MODIS Day
 
-palermo_AATmap_LST=readRDS("../r_data/palermo_AATmap_LST.rds")
+palermo_AATmap_LST=readRDS("data/palermo_AATmap_LST.rds")
 
 palermo_slope_LST=palermo_AATmap_LST[["SlopeSEG1"]]  
 palermo_trend_LST_s<- TrendClassification(palermo_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -153,7 +153,7 @@ plotKML::kml(palermo_trend_LST_s, colour_scale = SAGA_pal[[1]], colour = TrendSE
 #######################################################################################################
 # palermo LST climate 
 
-palermo_LST_monthly_ts=readRDS("../r_data/palermo_LST_monthly.rds")
+palermo_LST_monthly_ts=readRDS("data/palermo_LST_monthly.rds")
 
 palermo_LST_DJF<-subset(palermo_LST_monthly_ts,grep("-01-|-02-|-12-",index(palermo_LST_monthly_ts)))
 palermo_LST_DJF_mean=calc(palermo_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -196,9 +196,9 @@ plotKML::kml(palermo_LST_SON_sd, colour_scale = SAGA_pal[[1]], colour = layer,wi
 ###############################################################################################
 # roma break and trend analisys NDVI MODIS 
 
-roma_istat=readRDS("../r_data/roma_istat.rds")
+roma_istat=readRDS("data/roma_istat.rds")
 
-roma_AATmap_ndvi=readRDS("../r_data/roma_AATmap_ndvi.rds")
+roma_AATmap_ndvi=readRDS("data/roma_AATmap_ndvi.rds")
 
 roma_slope_ndvi_b=roma_AATmap_ndvi[["SlopeSEG1"]]  
 roma_break_ndvi_s_b<- TrendClassification(roma_AATmap_ndvi[["PvalSEG1"]], min.length=10, max.pval=0.05)
@@ -220,7 +220,7 @@ plotKML::kml(roma_break_ndvi_FI, colour_scale = SAGA_pal[[1]], colour = layer,pn
 ##########################################################################################
 # roma break and trend analisys LST MODIS Day
 
-roma_AATmap_LST=readRDS("../r_data/roma_AATmap_LST.rds")
+roma_AATmap_LST=readRDS("data/roma_AATmap_LST.rds")
 
 roma_slope_LST=roma_AATmap_LST[["SlopeSEG1"]]  
 roma_trend_LST_s<- TrendClassification(roma_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -235,7 +235,7 @@ plotKML::kml(roma_trend_LST_s, colour_scale = SAGA_pal[[1]], colour = TrendSEG1,
 #######################################################################################################
 # roma LST climate 
 
-roma_LST_monthly_ts=readRDS("../r_data/roma_LST_monthly.rds")
+roma_LST_monthly_ts=readRDS("data/roma_LST_monthly.rds")
 
 roma_LST_DJF<-subset(roma_LST_monthly_ts,grep("-01-|-02-|-12-",index(roma_LST_monthly_ts)))
 roma_LST_DJF_mean=calc(roma_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -276,9 +276,9 @@ plotKML::kml(roma_LST_SON_sd, colour_scale = SAGA_pal[[1]], colour = layer,width
 ###############################################################################################
 # bologna break and trend analisys NDVI MODIS 
 
-bologna_istat=readRDS("../r_data/bologna_istat.rds")
+bologna_istat=readRDS("data/bologna_istat.rds")
 
-bologna_AATmap_ndvi=readRDS("../r_data/bologna_AATmap_ndvi.rds")
+bologna_AATmap_ndvi=readRDS("data/bologna_AATmap_ndvi.rds")
 
 bologna_slope_ndvi_b=bologna_AATmap_ndvi[["SlopeSEG1"]]  
 bologna_break_ndvi_s_b<- TrendClassification(bologna_AATmap_ndvi[["PvalSEG1"]], min.length=10, max.pval=0.05)
@@ -300,7 +300,7 @@ plotKML::kml(bologna_break_ndvi_FI, colour_scale = SAGA_pal[[1]], colour = layer
 ##########################################################################################
 # bologna break and trend analisys LST MODIS Day
 
-bologna_AATmap_LST=readRDS("../r_data/bologna_AATmap_LST.rds")
+bologna_AATmap_LST=readRDS("data/bologna_AATmap_LST.rds")
 
 bologna_slope_LST=bologna_AATmap_LST[["SlopeSEG1"]]  
 bologna_trend_LST_s<- TrendClassification(bologna_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -315,7 +315,7 @@ plotKML::kml(bologna_trend_LST_s, colour_scale = SAGA_pal[[1]], colour = TrendSE
 #######################################################################################################
 # bologna LST climate 
 
-bologna_LST_monthly_ts=readRDS("../r_data/bologna_LST_monthly.rds")
+bologna_LST_monthly_ts=readRDS("data/bologna_LST_monthly.rds")
 
 bologna_LST_DJF<-subset(bologna_LST_monthly_ts,grep("-01-|-02-|-12-",index(bologna_LST_monthly_ts)))
 bologna_LST_DJF_mean=calc(bologna_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -355,9 +355,9 @@ plotKML::kml(bologna_LST_SON_sd, colour_scale = SAGA_pal[[1]], colour = layer,wi
 ###############################################################################################
 # firenze break and trend analisys NDVI MODIS 
 
-firenze_istat=readRDS("../r_data/firenze_istat.rds")
+firenze_istat=readRDS("data/firenze_istat.rds")
 
-firenze_AATmap_ndvi=readRDS("../r_data/firenze_AATmap_ndvi.rds")
+firenze_AATmap_ndvi=readRDS("data/firenze_AATmap_ndvi.rds")
 
 firenze_slope_ndvi_b=firenze_AATmap_ndvi[["SlopeSEG1"]]  
 firenze_break_ndvi_s_b<- TrendClassification(firenze_AATmap_ndvi[["PvalSEG1"]], min.length=10, max.pval=0.05)
@@ -379,7 +379,7 @@ plotKML::kml(firenze_break_ndvi_FI, colour_scale = SAGA_pal[[1]], colour = layer
 ##########################################################################################
 # firenze break and trend analisys LST MODIS Day
 
-firenze_AATmap_LST=readRDS("../r_data/firenze_AATmap_LST.rds")
+firenze_AATmap_LST=readRDS("data/firenze_AATmap_LST.rds")
 
 firenze_slope_LST=firenze_AATmap_LST[["SlopeSEG1"]]  
 firenze_trend_LST_s<- TrendClassification(firenze_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -394,7 +394,7 @@ plotKML::kml(firenze_trend_LST_s, colour_scale = SAGA_pal[[1]], colour = TrendSE
 #######################################################################################################
 # firenze LST climate 
 
-firenze_LST_monthly_ts=readRDS("../r_data/firenze_LST_monthly.rds")
+firenze_LST_monthly_ts=readRDS("data/firenze_LST_monthly.rds")
 
 firenze_LST_DJF<-subset(firenze_LST_monthly_ts,grep("-01-|-02-|-12-",index(firenze_LST_monthly_ts)))
 firenze_LST_DJF_mean=calc(firenze_LST_DJF@raster,function(x) mean(x,na.rm=T))

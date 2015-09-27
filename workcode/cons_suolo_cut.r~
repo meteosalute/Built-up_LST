@@ -16,7 +16,7 @@ library(plotKML)
 ############################################################
 # Setup directory
 
-setwd("")
+setwd("/home/alf/Scrivania/lav_morab_LST")
 
 ############################################################
 # Load supplementary code
@@ -26,44 +26,44 @@ source("auxillary_functions.r")
 
 
 
-firenze_istat=readRDS("../r_data/firenze_istat.rds")
-bologna_istat=readRDS("../r_data/bologna_istat.rds")
-roma_istat=readRDS("../r_data/roma_istat.rds")
-milano_istat=readRDS("../r_data/milano_istat.rds")
-palermo_istat=readRDS("../r_data/palermo_istat.rds")
+firenze_istat=readRDS("data/firenze_istat.rds")
+bologna_istat=readRDS("data/bologna_istat.rds")
+roma_istat=readRDS("data/roma_istat.rds")
+milano_istat=readRDS("data/milano_istat.rds")
+palermo_istat=readRDS("data/palermo_istat.rds")
 
 writeOGR(milano_istat, ".", "milano_istat", driver="ESRI Shapefile")
 system("gdalwarp  -cutline milano_istat.shp data/Milano_ispra_csuolo.tif data/milano_ispra_csuolo_clip.tif")
 milano_csuolo=milano_csuolo==1
 writeRaster(milano_csuolo,"data/milano_ispra_csuolo_clip.tif",overwrite=TRUE)
-milano_csuolo=raster("../r_data/milano_ispra_csuolo_clip.tif")
+milano_csuolo=raster("data/milano_ispra_csuolo_clip.tif")
 
 saveRDS(milano_csuolo,"milano_csuolo.rds")
 
 writeOGR(palermo_istat, ".", "palermo_istat", driver="ESRI Shapefile")
 system("gdalwarp  -cutline palermo_istat.shp data/Palermo_ispra_csuolo.tif data/palermo_ispra_csuolo_clip.tif")
-palermo_csuolo=raster("../r_data/palermo_ispra_csuolo_clip.tif")
+palermo_csuolo=raster("data/palermo_ispra_csuolo_clip.tif")
 palermo_csuolo=palermo_csuolo==1
 saveRDS(palermo_csuolo,"palermo_csuolo.rds")
 
 
 writeOGR(bologna_istat, ".", "bologna_istat", driver="ESRI Shapefile")
 system("gdalwarp  -cutline bologna_istat.shp data/Bologna_ispra_csuolo.tif data/bologna_ispra_csuolo_clip.tif")
-bologna_csuolo=raster("../r_data/bologna_ispra_csuolo_clip.tif")
+bologna_csuolo=raster("data/bologna_ispra_csuolo_clip.tif")
 bologna_csuolo=bologna_csuolo==1
 saveRDS(bologna_csuolo,"bologna_csuolo.rds")
 
 
 writeOGR(roma_istat, ".", "roma_istat", driver="ESRI Shapefile")
 system("gdalwarp  -cutline roma_istat.shp data/Roma_ispra_csuolo.tif data/Roma_ispra_csuolo_clip.tif")
-roma_csuolo=raster("../r_data/Roma_ispra_csuolo_clip.tif")
+roma_csuolo=raster("data/Roma_ispra_csuolo_clip.tif")
 roma_csuolo=roma_csuolo==1
 saveRDS(roma_csuolo,"roma_csuolo.rds")
 
 
 writeOGR(firenze_istat, ".", "firenze_istat", driver="ESRI Shapefile")
 system("gdalwarp  -cutline firenze_istat.shp data/Firenze_ispra_csuolo.tif data/firenze_ispra_csuolo_clip.tif")
-firenze_csuolo=raster("../r_data/firenze_ispra_csuolo_clip.tif")
+firenze_csuolo=raster("data/firenze_ispra_csuolo_clip.tif")
 firenze_csuolo=firenze_csuolo==1
 saveRDS(firenze_csuolo,"firenze_csuolo.rds")
 ##################################################################################
@@ -80,17 +80,17 @@ roma_csuolo=readRDS("roma_csuolo.rds")
 ##################################################################################
 
 
-firenze_AATmap_LST=readRDS("../r_data/firenze_AATmap_LST.rds")
+firenze_AATmap_LST=readRDS("data/firenze_AATmap_LST.rds")
 firenze_slope_LST=firenze_AATmap_LST[["SlopeSEG1"]]
 firenze_slope_LST=crop_raster(firenze_istat,firenze_slope_LST)
-firenze_LST_DJF_mean=readRDS("../r_data/firenze_LST_DJF_mean.rds")
-firenze_LST_SON_mean=readRDS("../r_data/firenze_LST_SON_mean.rds")
-firenze_LST_MAM_mean=readRDS("../r_data/firenze_LST_MAM_mean.rds")
-firenze_LST_JLA_mean=readRDS("../r_data/firenze_LST_JLA_mean.rds")
-firenze_LST_DJF_sd=readRDS("../r_data/firenze_LST_DJF_sd.rds")
-firenze_LST_SON_sd=readRDS("../r_data/firenze_LST_SON_sd.rds")
-firenze_LST_MAM_sd=readRDS("../r_data/firenze_LST_MAM_sd.rds")
-firenze_LST_JLA_sd=readRDS("../r_data/firenze_LST_JLA_sd.rds")
+firenze_LST_DJF_mean=readRDS("data/firenze_LST_DJF_mean.rds")
+firenze_LST_SON_mean=readRDS("data/firenze_LST_SON_mean.rds")
+firenze_LST_MAM_mean=readRDS("data/firenze_LST_MAM_mean.rds")
+firenze_LST_JLA_mean=readRDS("data/firenze_LST_JLA_mean.rds")
+firenze_LST_DJF_sd=readRDS("data/firenze_LST_DJF_sd.rds")
+firenze_LST_SON_sd=readRDS("data/firenze_LST_SON_sd.rds")
+firenze_LST_MAM_sd=readRDS("data/firenze_LST_MAM_sd.rds")
+firenze_LST_JLA_sd=readRDS("data/firenze_LST_JLA_sd.rds")
 
 firenze_LST_poly=rasterToPolygons(firenze_slope_LST)
 
@@ -109,17 +109,17 @@ writeRaster(firenze_LST_JLA_sd,"data/firenze_LST_JLA_sd.tif")
 writeRaster(firenze_LST_MAM_sd,"data/firenze_LST_MAM_sd.tif")
 
 ##########################################################################################################
-milano_AATmap_LST=readRDS("../r_data/milano_AATmap_LST.rds")
+milano_AATmap_LST=readRDS("data/milano_AATmap_LST.rds")
 milano_slope_LST=milano_AATmap_LST[["SlopeSEG1"]]
 milano_slope_LST=crop_raster(milano_istat,milano_slope_LST)
-milano_LST_DJF_mean=readRDS("../r_data/milano_LST_DJF_mean.rds")
-milano_LST_SON_mean=readRDS("../r_data/milano_LST_SON_mean.rds")
-milano_LST_MAM_mean=readRDS("../r_data/milano_LST_MAM_mean.rds")
-milano_LST_JLA_mean=readRDS("../r_data/milano_LST_JLA_mean.rds")
-milano_LST_DJF_sd=readRDS("../r_data/milano_LST_DJF_sd.rds")
-milano_LST_SON_sd=readRDS("../r_data/milano_LST_SON_sd.rds")
-milano_LST_MAM_sd=readRDS("../r_data/milano_LST_MAM_sd.rds")
-milano_LST_JLA_sd=readRDS("../r_data/milano_LST_JLA_sd.rds")
+milano_LST_DJF_mean=readRDS("data/milano_LST_DJF_mean.rds")
+milano_LST_SON_mean=readRDS("data/milano_LST_SON_mean.rds")
+milano_LST_MAM_mean=readRDS("data/milano_LST_MAM_mean.rds")
+milano_LST_JLA_mean=readRDS("data/milano_LST_JLA_mean.rds")
+milano_LST_DJF_sd=readRDS("data/milano_LST_DJF_sd.rds")
+milano_LST_SON_sd=readRDS("data/milano_LST_SON_sd.rds")
+milano_LST_MAM_sd=readRDS("data/milano_LST_MAM_sd.rds")
+milano_LST_JLA_sd=readRDS("data/milano_LST_JLA_sd.rds")
 
 milano_LST_poly=rasterToPolygons(milano_slope_LST)
 
@@ -140,17 +140,17 @@ writeRaster(milano_LST_MAM_sd,"data/milano_LST_MAM_sd.tif")
 
 ################################################################################################
 
-roma_AATmap_LST=readRDS("../r_data/roma_AATmap_LST.rds")
+roma_AATmap_LST=readRDS("data/roma_AATmap_LST.rds")
 roma_slope_LST=roma_AATmap_LST[["SlopeSEG1"]]
 roma_slope_LST=crop_raster(roma_istat,roma_slope_LST)
-roma_LST_DJF_mean=readRDS("../r_data/roma_LST_DJF_mean.rds")
-roma_LST_SON_mean=readRDS("../r_data/roma_LST_SON_mean.rds")
-roma_LST_MAM_mean=readRDS("../r_data/roma_LST_MAM_mean.rds")
-roma_LST_JLA_mean=readRDS("../r_data/roma_LST_JLA_mean.rds")
-roma_LST_DJF_sd=readRDS("../r_data/roma_LST_DJF_sd.rds")
-roma_LST_SON_sd=readRDS("../r_data/roma_LST_SON_sd.rds")
-roma_LST_MAM_sd=readRDS("../r_data/roma_LST_MAM_sd.rds")
-roma_LST_JLA_sd=readRDS("../r_data/roma_LST_JLA_sd.rds")
+roma_LST_DJF_mean=readRDS("data/roma_LST_DJF_mean.rds")
+roma_LST_SON_mean=readRDS("data/roma_LST_SON_mean.rds")
+roma_LST_MAM_mean=readRDS("data/roma_LST_MAM_mean.rds")
+roma_LST_JLA_mean=readRDS("data/roma_LST_JLA_mean.rds")
+roma_LST_DJF_sd=readRDS("data/roma_LST_DJF_sd.rds")
+roma_LST_SON_sd=readRDS("data/roma_LST_SON_sd.rds")
+roma_LST_MAM_sd=readRDS("data/roma_LST_MAM_sd.rds")
+roma_LST_JLA_sd=readRDS("data/roma_LST_JLA_sd.rds")
 
 roma_LST_poly=rasterToPolygons(roma_slope_LST)
 
@@ -169,17 +169,17 @@ writeRaster(roma_LST_JLA_sd,"data/roma_LST_JLA_sd.tif")
 writeRaster(roma_LST_MAM_sd,"data/roma_LST_MAM_sd.tif")
 
 ################################################################################################
-bologna_AATmap_LST=readRDS("../r_data/bologna_AATmap_LST.rds")
+bologna_AATmap_LST=readRDS("data/bologna_AATmap_LST.rds")
 bologna_slope_LST=bologna_AATmap_LST[["SlopeSEG1"]]
 bologna_slope_LST=crop_raster(bologna_istat,bologna_slope_LST)
-bologna_LST_DJF_mean=readRDS("../r_data/bologna_LST_DJF_mean.rds")
-bologna_LST_SON_mean=readRDS("../r_data/bologna_LST_SON_mean.rds")
-bologna_LST_MAM_mean=readRDS("../r_data/bologna_LST_MAM_mean.rds")
-bologna_LST_JLA_mean=readRDS("../r_data/bologna_LST_JLA_mean.rds")
-bologna_LST_DJF_sd=readRDS("../r_data/bologna_LST_DJF_sd.rds")
-bologna_LST_SON_sd=readRDS("../r_data/bologna_LST_SON_sd.rds")
-bologna_LST_MAM_sd=readRDS("../r_data/bologna_LST_MAM_sd.rds")
-bologna_LST_JLA_sd=readRDS("../r_data/bologna_LST_JLA_sd.rds")
+bologna_LST_DJF_mean=readRDS("data/bologna_LST_DJF_mean.rds")
+bologna_LST_SON_mean=readRDS("data/bologna_LST_SON_mean.rds")
+bologna_LST_MAM_mean=readRDS("data/bologna_LST_MAM_mean.rds")
+bologna_LST_JLA_mean=readRDS("data/bologna_LST_JLA_mean.rds")
+bologna_LST_DJF_sd=readRDS("data/bologna_LST_DJF_sd.rds")
+bologna_LST_SON_sd=readRDS("data/bologna_LST_SON_sd.rds")
+bologna_LST_MAM_sd=readRDS("data/bologna_LST_MAM_sd.rds")
+bologna_LST_JLA_sd=readRDS("data/bologna_LST_JLA_sd.rds")
 
 bologna_LST_poly=rasterToPolygons(bologna_slope_LST)
 
@@ -198,17 +198,17 @@ writeRaster(bologna_LST_JLA_sd,"data/bologna_LST_JLA_sd.tif")
 writeRaster(bologna_LST_MAM_sd,"data/bologna_LST_MAM_sd.tif")
 
 ################################################################################################
-palermo_AATmap_LST=readRDS("../r_data/palermo_AATmap_LST.rds")
+palermo_AATmap_LST=readRDS("data/palermo_AATmap_LST.rds")
 palermo_slope_LST=palermo_AATmap_LST[["SlopeSEG1"]]
 palermo_slope_LST=crop_raster(palermo_istat,palermo_slope_LST)
-palermo_LST_DJF_mean=readRDS("../r_data/palermo_LST_DJF_mean.rds")
-palermo_LST_SON_mean=readRDS("../r_data/palermo_LST_SON_mean.rds")
-palermo_LST_MAM_mean=readRDS("../r_data/palermo_LST_MAM_mean.rds")
-palermo_LST_JLA_mean=readRDS("../r_data/palermo_LST_JLA_mean.rds")
-palermo_LST_DJF_sd=readRDS("../r_data/palermo_LST_DJF_sd.rds")
-palermo_LST_SON_sd=readRDS("../r_data/palermo_LST_SON_sd.rds")
-palermo_LST_MAM_sd=readRDS("../r_data/palermo_LST_MAM_sd.rds")
-palermo_LST_JLA_sd=readRDS("../r_data/palermo_LST_JLA_sd.rds")
+palermo_LST_DJF_mean=readRDS("data/palermo_LST_DJF_mean.rds")
+palermo_LST_SON_mean=readRDS("data/palermo_LST_SON_mean.rds")
+palermo_LST_MAM_mean=readRDS("data/palermo_LST_MAM_mean.rds")
+palermo_LST_JLA_mean=readRDS("data/palermo_LST_JLA_mean.rds")
+palermo_LST_DJF_sd=readRDS("data/palermo_LST_DJF_sd.rds")
+palermo_LST_SON_sd=readRDS("data/palermo_LST_SON_sd.rds")
+palermo_LST_MAM_sd=readRDS("data/palermo_LST_MAM_sd.rds")
+palermo_LST_JLA_sd=readRDS("data/palermo_LST_JLA_sd.rds")
 
 palermo_LST_poly=rasterToPolygons(palermo_slope_LST)
 
@@ -296,7 +296,12 @@ system("python rasterstats data/firenze_LST_poly_32n.shp data/firenze_ispra_csuo
 # roma_ex_suolo <- extract(roma_csuolo,roma_LST_poly, fun = sum, na.rm = TRUE)
 # bologna_ex_suolo <- extract(bologna_csuolo,bologna_LST_poly, fun = sum, na.rm = TRUE)
 # palermo_ex_suolo <- extract(palermo_csuolo,palermo_LST_poly, fun = sum, na.rm = TRUE)
-
+# 
+# saveRDS(firenze_ex_suolo,"firenze_ex_suolo_s.rds")
+# saveRDS(milano_ex_suolo,"milano_ex_suolo_s.rds")
+# saveRDS(roma_ex_suolo,"roma_ex_suolo_s.rds")
+# saveRDS(roma_ex_suolo,"bologna_ex_suolo_s.rds")
+# saveRDS(roma_ex_suolo,"palermo_ex_suolo_s.rds")
 
 
 ################################################################################

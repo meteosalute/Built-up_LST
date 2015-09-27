@@ -29,7 +29,7 @@ source("auxillary_functions.r")
 ##########################################################################################
 # milano break and trend analisys LST MODIS Day
 
-milano_AATmap_LST=readRDS("../r_data/milano_AATmap_LST_night.rds")
+milano_AATmap_LST=readRDS("data/milano_AATmap_LST_night.rds")
 
 milano_slope_LST=milano_AATmap_LST[["SlopeSEG1"]]  
 milano_trend_LST_s<- TrendClassification(milano_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -44,7 +44,7 @@ milano_trend_LST_s<-crop_raster(milano_istat,milano_trend_LST_s)
 #######################################################################################################
 # milano LST climate 
 
-milano_LST_monthly_ts=readRDS("../r_data/milano_LST_monthly_night.rds")
+milano_LST_monthly_ts=readRDS("data/milano_LST_monthly_night.rds")
 
 milano_LST_DJF<-subset(milano_LST_monthly_ts,grep("-01-|-02-|-12-",index(milano_LST_monthly_ts)))
 milano_LST_DJF_mean=calc(milano_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -87,7 +87,7 @@ saveRDS(milano_LST_SON_sd,"data/milano_LST_SON_sd_night.rds")
 ##########################################################################################
 # palermo break and trend analisys LST MODIS Day
 
-palermo_AATmap_LST=readRDS("../r_data/palermo_AATmap_LST.rds")
+palermo_AATmap_LST=readRDS("data/palermo_AATmap_LST.rds")
 
 palermo_slope_LST=palermo_AATmap_LST[["SlopeSEG1"]]  
 palermo_trend_LST_s<- TrendClassification(palermo_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -102,7 +102,7 @@ palermo_trend_LST_s<-crop_raster(palermo_istat,palermo_trend_LST_s)
 #######################################################################################################
 # palermo LST climate 
 
-palermo_LST_monthly_ts=readRDS("../r_data/palermo_LST_monthly_night.rds")
+palermo_LST_monthly_ts=readRDS("data/palermo_LST_monthly_night.rds")
 
 palermo_LST_DJF<-subset(palermo_LST_monthly_ts,grep("-01-|-02-|-12-",index(palermo_LST_monthly_ts)))
 palermo_LST_DJF_mean=calc(palermo_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -148,7 +148,7 @@ saveRDS(palermo_LST_SON_sd,"data/palermo_LST_SON_sd_night.rds")
 ##########################################################################################
 # roma break and trend analisys LST MODIS Day
 
-roma_AATmap_LST=readRDS("../r_data/roma_AATmap_LST_night.rds")
+roma_AATmap_LST=readRDS("data/roma_AATmap_LST_night.rds")
 
 roma_slope_LST=roma_AATmap_LST[["SlopeSEG1"]]  
 roma_trend_LST_s<- TrendClassification(roma_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -163,7 +163,7 @@ roma_trend_LST_s<-crop_raster(roma_istat,roma_trend_LST_s)
 #######################################################################################################
 # roma LST climate 
 
-roma_LST_monthly_ts=readRDS("../r_data/roma_LST_monthly_night.rds")
+roma_LST_monthly_ts=readRDS("data/roma_LST_monthly_night.rds")
 
 roma_LST_DJF<-subset(roma_LST_monthly_ts,grep("-01-|-02-|-12-",index(roma_LST_monthly_ts)))
 roma_LST_DJF_mean=calc(roma_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -208,7 +208,7 @@ saveRDS(roma_LST_SON_sd,"data/roma_LST_SON_sd_night.rds")
 ##########################################################################################
 # bologna break and trend analisys LST MODIS Day
 
-bologna_AATmap_LST=readRDS("../r_data/bologna_AATmap_LST.rds")
+bologna_AATmap_LST=readRDS("data/bologna_AATmap_LST.rds")
 
 bologna_slope_LST=bologna_AATmap_LST[["SlopeSEG1"]]  
 bologna_trend_LST_s<- TrendClassification(bologna_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -223,7 +223,7 @@ bologna_trend_LST_s<-crop_raster(bologna_istat,bologna_trend_LST_s)
 #######################################################################################################
 # bologna LST climate 
 
-bologna_LST_monthly_ts=readRDS("../r_data/bologna_LST_monthly_night.rds")
+bologna_LST_monthly_ts=readRDS("data/bologna_LST_monthly_night.rds")
 
 bologna_LST_DJF<-subset(bologna_LST_monthly_ts,grep("-01-|-02-|-12-",index(bologna_LST_monthly_ts)))
 bologna_LST_DJF_mean=calc(bologna_LST_DJF@raster,function(x) mean(x,na.rm=T))
@@ -264,7 +264,7 @@ saveRDS(bologna_LST_SON_sd,"data/bologna_LST_SON_sd_night.rds")
 ##########################################################################################
 # firenze break and trend analisys LST MODIS Day
 
-firenze_AATmap_LST=readRDS("../r_data/firenze_AATmap_LST_night.rds")
+firenze_AATmap_LST=readRDS("data/firenze_AATmap_LST_night.rds")
 
 firenze_slope_LST=firenze_AATmap_LST[["SlopeSEG1"]]  
 firenze_trend_LST_s<- TrendClassification(firenze_AATmap_LST[["PvalSEG1"]], min.length=10, max.pval=0.1)
@@ -279,7 +279,7 @@ firenze_trend_LST_s<-crop_raster(firenze_istat,firenze_trend_LST_s)
 #######################################################################################################
 # firenze LST climate 
 
-firenze_LST_monthly_ts=readRDS("../r_data/firenze_LST_monthly_night.rds")
+firenze_LST_monthly_ts=readRDS("data/firenze_LST_monthly_night.rds")
 
 firenze_LST_DJF<-subset(firenze_LST_monthly_ts,grep("-01-|-02-|-12-",index(firenze_LST_monthly_ts)))
 firenze_LST_DJF_mean=calc(firenze_LST_DJF@raster,function(x) mean(x,na.rm=T))
