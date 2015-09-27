@@ -2,7 +2,7 @@
 The impact of built-up surfaces on land surface temperatures in Italian urban areas
 ===================================================================================
 
-**Marco Morabito** [1,2] , *Alfonso Crisci* [1] , Alessandro Messeri [2,3] , Simone
+*Marco Morabito* [1,2] , Alfonso Crisci [1] , Alessandro Messeri [2,3] , Simone
 Orlandini [2,3] , Antonio Raschi [1] , Giampiero Maracchi [4] , Michele Munafò [5]
 
  
@@ -21,7 +21,7 @@ University of Florence, Florence, Italy.
 5 Italian National Institute for Environmental Protection and Research,
 Rome, Italy.
 
- 
+Correspondent author: Marco Morabito marco.morabito@unifi.it
 
 Abstract
 
